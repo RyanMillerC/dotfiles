@@ -1,5 +1,7 @@
-"let g:solarized_termcolors=16
-"let g:solarized_termtrans=1
+" Coloring
 syntax enable
-set background=dark
 colorscheme solarized
+
+" Editor settings
+set number
+set relativenumber
