@@ -1,0 +1,24 @@
+# Autocomplete case-insensitive
+set completion-ignore-case on
+
+# Search history with up/down arrows
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\eOA": history-search-backward
+"\eOB": history-search-forward
+
+set keymap vi-command
+
+# Unset v (enter command editor) because it's annoying
+v: ""
+
+"\e[24~": "ifg\n"
+
+set keymap vi-insert
+
+"\e[24~": "fg\n"
+
+# <C-_> also binds to <C-/>
+# Control-_: clear-screen
+
+Control-l: clear-screen
