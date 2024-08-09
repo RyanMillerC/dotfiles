@@ -1,0 +1,87 @@
+;; !  | means mandatory
+;; #  | means optional
+;; C  | left_command
+;; T  | left_control
+;; O  | left_option
+;; S  | left_shift
+;; F  | fn
+;; Q  | right_command
+;; W  | right_control
+;; E  | right_option
+;; R  | right_shift
+;; P  | caps_lock
+;; !! | mandatory command + control + optional + shift (hyper)
+;; ## | optional any
+
+{:applications {:iterm ["^com\\.googlecode\\.iterm2"]}
+
+ :devices {:dz60 [{:vendor_id 17498 :product_id 8800}]
+           ;; Logan's Office
+           :wasd [{:vendor_id 1241 :product_id 361}]}
+
+ :main [{:des   "Swap option/command (DZ60)"
+         :rules [:dz60
+            ;; Weird - After MacOS 13.2.1 the left command/option seem to have switched?
+            ;;[:##left_option :left_command]
+            ;;[:##left_command :left_option]
+            [:##right_option :right_command]
+            [:##right_command :right_option]]}
+
+        {:des   "Swap alt/command (WASD)"
+         :rules [:wasd
+            [:##left_option :left_command]
+            [:##left_command :left_option]
+            [:##right_option :right_command]
+            [:##right_command :right_option]]}
+
+;;         {:des   "Right Command -> Right Option (iTerm Only)"
+;;          :rules [:iterm
+;;             [:##left_command :left_option]
+;;             [:##left_option :left_command]]}
+
+        ;; {:des   "Right Command -> Right Option (iTerm Only - DZ60 Fix)"
+        ;;  :rules [:iterm :dz60
+        ;;     [:##left_option :left_command]]}
+
+        {:des   "VI Arrow Keys (Fn + hjkl)"
+         :rules [[:!F##h :left_arrow]
+                 [:!F##j :down_arrow]
+                 [:!F##k :up_arrow]
+                 [:!F##l :right_arrow]]}
+
+        {:des   "Swap Fn and CAPS LOCK"
+         :rules [[:##caps_lock :fn]
+                 [:##fn :caps_lock]]}
+
+        {:des   "Page Up/Page Down (Fn + { && (Fn + })"
+         :rules [[:!Fopen_bracket :page_up]
+                 [:!Fclose_bracket :page_down]]}
+
+        {:des   "Pok3r-style Escape"
+         :rules [[:grave_accent_and_tilde :escape]]}
+
+        {:des   "Fn + 5 = F5"
+         :rules [[:!F5 :f5]]}
+
+        {:des   "Fn + Enter = F12"
+         :rules [[:!Freturn_or_enter :f12]]}
+
+        {:des   "Accent/Tilde Escape on DZ60"
+         :rules [:dz60
+                 [:!Sescape :!Sgrave_accent_and_tilde]
+                 [:!Fescape :grave_accent_and_tilde]]}
+
+        {:des   "Fn + Gt/Lt = Brightness"
+         :rules [[:!Fcomma :display_brightness_decrement]
+                 [:!Fperiod :display_brightness_increment]]}
+
+        {:des   "Fn + -/+ = Sounds"
+         :rules [[:!F0 :mute]
+                 [:!Fhyphen :volume_decrement]
+                 [:!Fequal_sign :volume_increment]]}
+
+        {:des   "Fn + Space = Play/Pause"
+         :rules [[:!Fspacebar :play_or_pause]]}
+
+        {:des   "Hyper+S to speak (test)"
+         :rules [[:!!s "say test"]]}]}
