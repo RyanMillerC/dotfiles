@@ -1,0 +1,45 @@
+[alias]
+    aa = add --all
+    amend = commit --amend
+    br = branch
+    br-clean = "!git branch | grep -v 'master' | xargs git branch -D"
+    co = commit
+    com = commit -m
+    ch = checkout
+    cl = clean -df
+    di = diff
+    dif = diff
+    dic = diff --cached
+    diffc = diff --cached
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    rpo = remote prune origin
+    pl = pull
+    ps = push
+    psr = push -u origin
+    rh = reset --hard
+    stashall = stash --include-untracked
+    ss = status
+
+[core]
+    autocrlf = false
+    eol = lf
+    excludesfile = ~/.gitignore
+    pager = less -+FX
+
+[credential]
+    # helper = cache --timeout 3600
+    # helper = store
+    helper = osxkeychain
+
+[grep]
+    lineNumber = true
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = false
+
+[user]
+    name = Ryan Miller
+    email = <RyanMillerC@outlook.com>
