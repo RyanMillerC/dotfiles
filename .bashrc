@@ -25,14 +25,17 @@ set -o vi
 stty -ixon
 
 # Environment Variables
-export EDITOR='vim'
-export HISTIGNORE='*clear-line:oc login*:history | grep*:*CREDS=*:cs:cls:clear:fg*'
+export EDITOR='nvim'
+export HISTIGNORE='*clear-line:oc login*:history | grep*:*CREDS=*:cs:cls:clear:fg*:locker:unlocker'
 export LC_COLLATE="C" # Sort ls with dotfiles first
 export LS_COLORS=${LS_COLORS}:'di=0;34:ex=0;32:fi=0;37:ow=0;34:'
-export VISUAL='vim'
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY='YES' # Fix MacOS breaking Ansible -> Hashicorp Vault collection
+export VISUAL='nvim'
 
 # Dynamically build PATH
 paths=(
+  ${HOME}/bin
+  /opt/homebrew/opt/node@20/bin
   /opt/homebrew/bin
   /opt/homebrew/opt/coreutils/libexec/gnubin
   /opt/homebrew/opt/findutils/libexec/gnubin
@@ -43,6 +46,9 @@ paths=(
   /opt/homebrew/opt/gnu-tar/libexec/gnubin
   /opt/homebrew/opt/gnutls/libexec/gnubin
   /opt/homebrew/opt/grep/libexec/gnubin
+  ${HOME}/Library/Python/3.9/bin
+  ${HOME}/Library/Python/3.13/bin
+  ${KREW_ROOT:-$HOME/.krew}/bin
   $PATH
 )
 new_path=""
@@ -69,17 +75,22 @@ COLOROFF="\e[0;m"
 
 # Aliases
 alias ..='cd ..'
-alias beefup='wakeonlan -i 10.0.2.6 "7c:10:c9:41:00:58"'
+alias beefup='wakeonlan -i "$(dig +short beef.taco.moe)" "7c:10:c9:41:00:58"'
+alias beefdown='echo not implemented'
 alias cls='cs'
 alias chmox="chmod +x"
 alias chownme="sudo chown ${USER}:${USER}"
 alias create-virtualenv='python3 -m venv .venv'
 alias ct="date '+%Y%m%d%H%M%S'"
 alias dir='ll'
+alias docker='podman'
 alias g='git'
 alias ll='ls -lahH --color --group-directories-first'
+alias kc='kubectl'
+alias oc='kubectl'
 alias remove-exec='find . -type f -exec chmod -x {} \;'
 alias venv='source ./.venv/bin/activate'
+alias vim='nvim'
 
 # Better cat
 cat() {
