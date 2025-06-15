@@ -16,8 +16,8 @@
 {:applications {:iterm ["^com\\.googlecode\\.iterm2"]}
 
  :devices {:dz60 [{:vendor_id 17498 :product_id 8800}]
-           ;; Logan's Office
-           :wasd [{:vendor_id 1241 :product_id 361}]}
+           :wasd [{:vendor_id 1241 :product_id 361}]
+           :g403 [{:vendor_id 1133 :product_id 49283}]}
 
  :main [{:des   "Swap option/command (DZ60)"
          :rules [:dz60
@@ -34,6 +34,9 @@
             [:##right_option :right_command]
             [:##right_command :right_option]]}
 
+        {:des   "Mouse middle click"
+         :rules [:g403
+            [:!C##tab :f13]]}
 ;;         {:des   "Right Command -> Right Option (iTerm Only)"
 ;;          :rules [:iterm
 ;;             [:##left_command :left_option]
