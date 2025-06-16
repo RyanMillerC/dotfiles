@@ -6,7 +6,7 @@ files=(
   .bash_profile
   .bashrc
   .config/karabiner.edn
-  .config/nvim
+  .config/nvim/
   .gitconfig
   .gitignore
   .inputrc
@@ -15,6 +15,6 @@ files=(
 )
 
 for file in ${files[@]} ; do
-    echo cp "${HOME}/${file}" "./${file}"
-    cp "${HOME}/${file}" "./${file}"
+    echo cp -r "${HOME}/${file}" "./${file}"
+    cp -r "${HOME}/${file}" "./${file}"
 done
