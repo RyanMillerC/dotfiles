@@ -81,7 +81,7 @@ config.keys = {
 }
 
 config.mouse_bindings = {
-  -- Slower scroll up (3 lines instead of Page Up/Down)
+  -- Slower scroll up/down (3 lines instead of Page Up/Down)
   {
     event = { Down = { streak = 1, button = { WheelUp = 1 } } },
     mods = 'NONE',
