@@ -5,12 +5,13 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- Actual config
-config.color_scheme = 'Solarized (dark) (terminal.sexy)'
-config.font         = wezterm.font 'Hack'
-config.font_size    = 18
-config.front_end    = "WebGpu"
-config.initial_cols = 120
-config.initial_rows = 28
+--config.alternate_buffer_wheel_scroll_speed = 1
+config.color_scheme       = 'Solarized (dark) (terminal.sexy)'
+-- config.font               = wezterm.font 'Hack'
+config.font_size          = 14
+config.front_end          = "WebGpu"
+config.window_decorations = "NONE"
+
 
 -- Keybindings
 config.keys = {
@@ -76,6 +77,22 @@ config.keys = {
     key    = 'RightArrow',
     mods   = 'ALT',
     action = wezterm.action.AdjustPaneSize { 'Right', 5 },
+  },
+}
+
+config.mouse_bindings = {
+  -- Slower scroll up (3 lines instead of Page Up/Down)
+  {
+    event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+    mods = 'NONE',
+    action = wezterm.action.ScrollByLine(-3),
+    alt_screen = false,
+  },
+  {
+    event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+    mods = 'NONE',
+    action = wezterm.action.ScrollByLine(3),
+    alt_screen = false,
   },
 }
 
