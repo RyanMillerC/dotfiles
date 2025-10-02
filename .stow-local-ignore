@@ -1,4 +1,6 @@
 .git
+.vim/autoload
+.vim/plugged
 Makefile
 README.md
 other-stuff
