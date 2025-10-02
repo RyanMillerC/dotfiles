@@ -1,3 +1,3 @@
 .PHONY: install
 install:
-	stow -t "${HOME}" .
+	stow -t "${HOME}" -vv .
