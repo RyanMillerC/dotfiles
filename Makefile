@@ -1,8 +1,10 @@
 .PHONY: help
 help:
-	echo 'make brew-personal - Install general + personal packages'
-	echo 'make brew-work     - Install general + work packages'
-	echo 'make stow          - Set up dotfile symlinks'
+	@echo 'Makefile Help'
+	@echo ''
+	@echo 'make brew-personal - Install general + personal packages'
+	@echo 'make brew-work     - Install general + work packages'
+	@echo 'make stow          - Set up dotfile symlinks'
 
 .PHONY: brew-personal
 brew-personal:
