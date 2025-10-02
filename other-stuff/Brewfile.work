@@ -1,0 +1,5 @@
+# Casks (Please use full names tap/cask)
+cask "microsoft-auto-update"
+cask "microsoft-outlook"
+cask "microsoft-teams"
+cask "slack"
