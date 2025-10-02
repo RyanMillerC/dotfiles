@@ -2,3 +2,7 @@
 
 # MacOS...
 .DS_Store
+
+# This is needed to prevent dotfiles from syncing. TODO: better
+.vim/plugged
+.vim/autoload
