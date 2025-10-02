@@ -1,3 +1,4 @@
-.vim/plugged
-\#.*
+# Global ~/.gitignore file
+
+# MacOS...
 .DS_Store
