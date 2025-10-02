@@ -12,7 +12,6 @@ gnu-indent
 gnu-sed
 gnu-tar
 gnutls
-goku
 grep
 helm
 imagemagick
@@ -27,16 +26,16 @@ node
 node@20
 podman
 sevenzip
-sketchybar
 tmux
 unbound
-vault
 wakeonlan
 watch
 yarn
+felixkratz/formulae/sketchybar
+hashicorp/tap/vault
+yqrashawn/goku/goku
 
 # brew installed casks
-aerospace
 audacity
 bettertouchtool
 firefox@developer-edition
@@ -49,3 +48,4 @@ steam
 the-unarchiver
 visual-studio-code
 wezterm
+nikitabobko/tap/aerospace
