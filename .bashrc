@@ -35,7 +35,7 @@ export VISUAL='nvim'
 # Dynamically build PATH
 paths=(
   ${HOME}/bin
-  /opt/homebrew/opt/node@20/bin
+  /usr/local/bin
   /opt/homebrew/bin
   /opt/homebrew/opt/coreutils/libexec/gnubin
   /opt/homebrew/opt/findutils/libexec/gnubin
@@ -46,6 +46,8 @@ paths=(
   /opt/homebrew/opt/gnu-tar/libexec/gnubin
   /opt/homebrew/opt/gnutls/libexec/gnubin
   /opt/homebrew/opt/grep/libexec/gnubin
+  /opt/homebrew/opt/node@20/bin
+  /opt/homebrew/opt/ruby/bin
   ${HOME}/Library/Python/3.9/bin
   ${HOME}/Library/Python/3.13/bin
   ${KREW_ROOT:-$HOME/.krew}/bin
@@ -75,6 +77,7 @@ COLOROFF="\e[0;m"
 
 # Aliases
 alias ..='cd ..'
+alias beef='ssh -t beef.taco.moe powershell.exe'
 alias beefup='wakeonlan -i "$(dig +short beef.taco.moe)" "7c:10:c9:41:00:58"'
 alias beefdown='echo not implemented'
 alias cls='cs'
@@ -87,7 +90,7 @@ alias docker='podman'
 alias g='git'
 alias ll='ls -lahH --color --group-directories-first'
 alias kc='kubectl'
-alias oc='kubectl'
+# alias oc='kubectl'
 alias remove-exec='find . -type f -exec chmod -x {} \;'
 alias venv='source ./.venv/bin/activate'
 alias vim='nvim'
