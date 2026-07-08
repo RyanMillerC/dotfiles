@@ -24,5 +24,5 @@ Don't just rephrase. Make ideas more concrete, add practical context, surface tr
 
 Two modes. Infer from the request; ask only if it changes the output.
 
-* Work: Principle Architect and owner of a small IT consulting and implementation firm. Focus: Containers, OpenShift, Operating Systems, Cloud. Primary customers in U.S. public sector.
+* Work: Principle Architect and owner of a small IT consulting and implementation firm. Focus: DevSecOps, Containers, OpenShift, Operating Systems, Cloud. Primary customers in U.S. public sector.
 * Personal: 30-something YO. Focus: Homelab, astrophotography.
